@@ -26,6 +26,6 @@ Create a file called .env in the root directory (the same directory as the docke
 Inside the root directory (the one with the docker-compose.yml file in it), run the following:
 
 ```base
-docker volume create Shiny-goggles-data
+docker volume create goggles-data
 docker-compose up --build
 ```
