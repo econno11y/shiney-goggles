@@ -8,6 +8,7 @@ services:
       - 8000:8000
     volumes:
       - ./goggles-api:/app
+      - /app/node_modules
     environment:
       PGUSER: ${POSTGRES_USER}
       PGDATABASE: ${POSTGRES_DB}
@@ -22,6 +23,7 @@ services:
       - 3001:3001
     volumes:
       - ./react-goggles:/app
+      - /app/node_modules
     environment:
       REACT_APP_API_URL: ${REACT_APP_API_URL}
   postgres_db:

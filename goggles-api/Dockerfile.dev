@@ -1,6 +1,7 @@
 FROM node:lts-bullseye-slim
 WORKDIR /app
-COPY package.json ./
+RUN npm install -g nodemon
+COPY package.json yarn.lock ./
 RUN yarn install
 EXPOSE 8000
 CMD ["yarn", "dev"]

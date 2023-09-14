@@ -1,6 +1,7 @@
 FROM node:lts-bullseye
 WORKDIR /app
-COPY package.json ./
+RUN npm install -g create-vite@latest
+COPY package.json yarn.lock ./
 RUN yarn install
 EXPOSE 3001
 CMD ["yarn", "start"]
