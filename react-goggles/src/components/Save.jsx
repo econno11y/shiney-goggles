@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 
 const Save = ({ users }) => {
-
 	const [addedUsers, setAddedUsers] = useState([]);
 	const [alreadyExistingUsers, setAlreadyExistingUsers] = useState([]);
 
 	const submitUsers = async () => {
-    const usersToAdd = users?.map((user) => ({
-      name: user.name,
-      email: user.email,
-      phone: user.phone,
-      company: user.company.name,
-    }));
+		const usersToAdd = users?.map((user) => ({
+			user: user.id,
+			name: user.name,
+			email: user.email,
+			phone: user.phone,
+			company: user.company.name,
+		}));
 
 		const url = "http://localhost:8000/api/users/?bulk=true";
 		const fetchOptions = {
