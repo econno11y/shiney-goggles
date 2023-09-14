@@ -1,0 +1,6 @@
+FROM node:lts-bullseye
+WORKDIR /app
+COPY package.json ./
+RUN yarn install
+EXPOSE 3001
+CMD ["yarn", "start"]
